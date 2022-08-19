@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import UserList from './UserList';
 
 const Home = () => {
 
@@ -10,14 +11,7 @@ const Home = () => {
 
     return ( 
         <div className="home">
-            <h2>Users</h2>
-            {
-            //Note: Preview just shows user name, clicking on user should show more info when it is added
-            users.map((user) => (
-                <div className="preview" key={user.id}>
-                    <h3>{ user.name }</h3>
-                </div>
-            ))}
+            <UserList users={users}/>
         </div>
      );
 }
