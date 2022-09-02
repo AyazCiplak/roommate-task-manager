@@ -1,7 +1,6 @@
-const UserList = (props) => {
-
-    const users = props.users;
-
+//Lists users based on an array users
+const UserList = ({ users }) => {
+    
         //User title coded in since prop only used to list users
     return ( 
         <div className="user-list">
