@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import UserList from './UserList';
 import TaskList from './TaskList';
 
@@ -11,17 +11,26 @@ const Home = () => {
         { name: "Name 3", id: 3}
     ]);
 
-    //Sample task set
-    const [tasks, setTasks] = useState([
-        { title: "Task 1", description: "This is the first task", responsible: "Ayaz", date: "01/01/2023", id: 1},
-        { title: "Task 2", description: "This is the second task", responsible: "Jordi", date: "03/01/2023", id: 2},
-        { title: "Task 3", description: "This is the third task", responsible: "Emanuele", date: "02/01/2023", id: 3}
-    ])
+    //Gets filled with data from JSON file
+    const [tasks, setTasks] = useState(null)
+
+    //Fetches data from taskdb JSON file (note: must be running on port 8000)
+    useEffect(() => {
+        fetch('http://localhost:8000/tasks')
+        .then(res => {
+            return res.json()
+        })
+        .then(data => {
+           setTasks(data); 
+        })
+    }, []);
 
     return ( 
         <div className="home">
             <UserList users={users}/>
-            <TaskList tasks={tasks}/>
+            {// Does not output tasks until data is loaded in
+            }
+            {tasks && <TaskList tasks={tasks}/>}
         </div>
      );
 }
