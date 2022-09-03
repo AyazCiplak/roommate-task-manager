@@ -14,6 +14,8 @@ const Home = () => {
     //Gets filled with data from JSON file
     const [tasks, setTasks] = useState(null)
 
+    const [tasksPending, setTasksPending] = useState(true);
+
     //Fetches data from taskdb JSON file (note: must be running on port 8000)
     useEffect(() => {
         fetch('http://localhost:8000/tasks')
@@ -21,16 +23,17 @@ const Home = () => {
             return res.json()
         })
         .then(data => {
-           setTasks(data); 
+            setTasksPending(false);
+            setTasks(data); 
         })
     }, []);
 
+    //Note: && does not display the second element if the first one is false
     return ( 
         <div className="home">
             <UserList users={users}/>
-            {// Does not output tasks until data is loaded in
-            }
-            {tasks && <TaskList tasks={tasks}/>}
+            { tasksPending && <div>Loading tasks...</div> }
+            { tasks && <TaskList tasks={tasks}/> }
         </div>
      );
 }
