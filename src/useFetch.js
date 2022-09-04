@@ -10,7 +10,9 @@ const useFetch = ( url ) => {
 
     //Fetches data from taskdb JSON file (note: must be running on port 8000)
     useEffect(() => {
-        fetch(url)
+        const abortCont = new AbortController();
+
+        fetch(url, { signal: abortCont.signal })
         .then(res => {
             if(!res.ok) {
                 throw Error("Data could not be fetched for that resource.")
@@ -23,13 +25,19 @@ const useFetch = ( url ) => {
             setError(null);
         })
         .catch(err => {
-            setTasksPending(false);
-            setError(err.message);
+            if (err.name === 'AbortError'){
+                console.log("Fetch aborted")
+            } else {
+                setTasksPending(false);
+                setError(err.message);
+            }
     })
+    
+    return () => abortCont.abort();
+
     }, [url]);
 
     return { tasks, tasksPending, error }
-
 }
 
 export default useFetch;

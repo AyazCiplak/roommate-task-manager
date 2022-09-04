@@ -2,7 +2,6 @@ const TaskList = ({ tasks }) => {
     
     return ( 
         <div className="user-list">
-            <h2>Tasks</h2>
             {//Note: Preview just shows main task name, secondary task name and more info should show when clicked
             tasks.map((task) => (
                 <div className="preview" key={task.id}>

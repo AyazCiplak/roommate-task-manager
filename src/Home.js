@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import UserList from './UserList';
 import TaskList from './TaskList';
 import useFetch from './useFetch';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
 
@@ -22,6 +23,10 @@ const Home = () => {
             { error && <div>{ error }</div> }
             <UserList users={users}/>
             { tasksPending && <div>Loading tasks...</div> }
+            <h2>Tasks</h2>
+            <button className="new-task-button">
+                <Link to='/new-task'>+</Link>
+            </button>
             { tasks && <TaskList tasks={ tasks }/> }
         </div>
      );
