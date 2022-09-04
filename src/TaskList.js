@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const TaskList = ({ tasks }) => {
     
     return ( 
@@ -5,7 +7,9 @@ const TaskList = ({ tasks }) => {
             {//Note: Preview just shows main task name, secondary task name and more info should show when clicked
             tasks.map((task) => (
                 <div className="preview" key={task.id}>
-                    <h3>{ task.title }</h3>
+                    <Link to={`/tasks/${task.id}`}>
+                        <h3>{ task.title }</h3>
+                    </Link>
                     <h5>{ task.responsible }</h5>
                     <h5>{ task.date }</h5>
                 </div>

@@ -3,6 +3,7 @@ import Home from './Home';
 import CreateTask from './CreateTask';
 import Settings from './Settings';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import TaskDetails from './TaskDetails';
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
             </Route>
             <Route path='/new-task'>
               <CreateTask />
+            </Route>
+            <Route path="/tasks/:id">
+              <TaskDetails />
             </Route>
             <Route path='/settings'>
               <Settings />

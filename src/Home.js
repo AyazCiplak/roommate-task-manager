@@ -21,12 +21,17 @@ const Home = () => {
     return ( 
         <div className="home">
             { error && <div>{ error }</div> }
+            <div className="users-header">
+                <h2>Users</h2>
+            </div>
             <UserList users={users}/>
+            <div className="tasks-header">
+                <h2>Tasks</h2>
+                <button className="new-task-button">
+                    <Link to='/new-task'>+</Link>
+                </button>
+            </div>
             { tasksPending && <div>Loading tasks...</div> }
-            <h2>Tasks</h2>
-            <button className="new-task-button">
-                <Link to='/new-task'>+</Link>
-            </button>
             { tasks && <TaskList tasks={ tasks }/> }
         </div>
      );
