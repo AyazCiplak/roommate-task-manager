@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import { useHistory } from 'react-router-dom';
 
 const CreateTask = () => {
     
@@ -8,10 +9,15 @@ const CreateTask = () => {
     const [responsible, setResponsible] = useState('None');
     const [date, setDate] = useState('');
 
+    const [isPending, setIsPending] = useState(false);
+    const history = useHistory();
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const task = { title, description, responsible, date };
+
+        setIsPending(true);
 
         fetch('http://localhost:8000/tasks', {
             method: 'POST',
@@ -20,6 +26,8 @@ const CreateTask = () => {
             
         }).then (() => {
             console.log("New task added");
+            setIsPending(false);
+            history.push('/');
         })
     }
     
@@ -38,7 +46,7 @@ const CreateTask = () => {
                 <textarea
                   required
                   value={description} 
-                  onChange={(e) => setDescription(e.target.value)}
+                  onChange={(e) => setDescription(e.target.value)} 
                 ></textarea>
                 <label>Responsible: </label>
                 <select
@@ -58,7 +66,8 @@ const CreateTask = () => {
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
                 />
-                <button>Add task</button>
+                { !isPending && <button>Add task</button> }
+                { isPending && <button disabled>Adding task...</button>}
             </form>
         </div>
      );
