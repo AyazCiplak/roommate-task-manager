@@ -1,13 +1,16 @@
+import { Link } from 'react-router-dom';
+
 //Lists users based on an array users
-const UserList = ({ users }) => {
-    
-        //User title coded in since prop only used to list users
+const UserList = ({ data: users }) => {
+
+    //Deletes task, then reloads page to update data (using history.go(0))
+
     return ( 
         <div className="user-list">
-            {//Note: Preview just shows user name, clicking on user should show more info when it is added  
+            {
             users.map((user) => (
                 <div className="preview" key={user.id}>
-                    <h3>{ user.name }</h3>
+                        <h3>{ user.name }</h3>
                 </div>
             ))}
         </div>

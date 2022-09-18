@@ -7,24 +7,29 @@ import { Link } from 'react-router-dom';
 const Home = () => {
 
     //Sample user set
-    const [users, setUsers] = useState([
-        { name: "Name 1", id: 1},
-        { name: "Name 2", id: 2},
-        { name: "Name 3", id: 3}
-    ]);
+   // const [users, setUsers] = useState([
+   //     { name: "Name 1", id: 1},
+   //     { name: "Name 2", id: 2},
+   //     { name: "Name 3", id: 3}
+   // ]);
 
-    const { data : tasks , dataPending : tasksPending, error} = useFetch('http://localhost:8000/tasks')
-
+    const { data : users , dataPending : usersPending, error : usersError} = useFetch('http://localhost:8001/users')
+    const { data : tasks , dataPending : tasksPending, error : tasksError} = useFetch('http://localhost:8000/tasks')
+    //Insert following line over first "tasks-header div"
+    //<UserList users={users}/>
     
 
     //Note: && does not display the second element if the first one is false
     return ( 
         <div className="home">
-            { error && <div>{ error }</div> }
+            { tasksError && <div>{ tasksError }</div> }
             <div className="users-header">
                 <h2>Users</h2>
             </div>
-            <UserList users={users}/>
+            { usersPending && <div>Loading users...</div> }
+            { users && <UserList data={ users }/> }
+
+
             <div className="tasks-header">
                 <h2>Tasks</h2>
                 <button className="new-task-button">
