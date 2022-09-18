@@ -13,7 +13,7 @@ const Home = () => {
         { name: "Name 3", id: 3}
     ]);
 
-    const { data , dataPending, error} = useFetch('http://localhost:8000/tasks')
+    const { data : tasks , dataPending : tasksPending, error} = useFetch('http://localhost:8000/tasks')
 
     
 
@@ -31,8 +31,8 @@ const Home = () => {
                     <Link to='/new-task'>+</Link>
                 </button>
             </div>
-            { dataPending && <div>Loading tasks...</div> }
-            { data && <TaskList data={ data }/> }
+            { tasksPending && <div>Loading tasks...</div> }
+            { tasks && <TaskList data={ tasks }/> }
         </div>
      );
 }
