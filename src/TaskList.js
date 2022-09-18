@@ -1,9 +1,10 @@
 import { Link, useHistory } from 'react-router-dom';
 
-const TaskList = ({ tasks }) => {
+const TaskList = ({ data: tasks }) => {
 
     const history = useHistory();
 
+    //Deletes task, then reloads page to update data (using history.go(0))
     const handleClick = (id) => {
         fetch('http://localhost:8000/tasks/' + id, {
             method: 'DELETE'

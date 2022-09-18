@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react';
 const useFetch = ( url ) => {
     
     //Gets filled with data from JSON file
-    const [tasks, setTasks] = useState(null)
+    const [data, setData] = useState(null)
 
-    const [tasksPending, setTasksPending] = useState(true);
+    const [dataPending, setDataPending] = useState(true);
     const [error, setError] = useState(null);
 
     //Fetches data from taskdb JSON file (note: must be running on port 8000)
@@ -20,15 +20,15 @@ const useFetch = ( url ) => {
             return res.json()
         })
         .then(data => {
-            setTasksPending(false);
-            setTasks(data); 
+            setDataPending(false);
+            setData(data); 
             setError(null);
         })
         .catch(err => {
             if (err.name === 'AbortError'){
                 console.log("Fetch aborted")
             } else {
-                setTasksPending(false);
+                setDataPending(false);
                 setError(err.message);
             }
     })
@@ -37,7 +37,7 @@ const useFetch = ( url ) => {
 
     }, [url]);
 
-    return { tasks, tasksPending, error }
+    return { data, dataPending, error }
 }
 
 export default useFetch;
