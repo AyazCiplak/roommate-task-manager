@@ -25,6 +25,9 @@ const Home = () => {
             { tasksError && <div>{ tasksError }</div> }
             <div className="users-header">
                 <h2>Users</h2>
+                <button className="new-user-button">
+                    <Link to='/new-user'>+</Link>
+                </button>
             </div>
             { usersPending && <div>Loading users...</div> }
             { users && <UserList data={ users }/> }

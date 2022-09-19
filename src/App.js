@@ -1,9 +1,12 @@
 import Navbar from './Navbar';
 import Home from './Home';
 import CreateTask from './CreateTask';
+import CreateUser from './CreateUser'
 import Settings from './Settings';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import TaskDetails from './TaskDetails';
+import UserDetails from './UserDetails';
+
 
 function App() {
   return (
@@ -14,6 +17,12 @@ function App() {
           <Switch>
             <Route exact path='/'>
               <Home />
+            </Route>
+            <Route path="/users/:id">
+              <UserDetails />
+            </Route>
+            <Route path='/new-user'>
+              <CreateUser />
             </Route>
             <Route path='/new-task'>
               <CreateTask />

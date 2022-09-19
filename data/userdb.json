@@ -1,16 +1,16 @@
 {
-    "users": [
-      {
-        "name": "User 1",
-        "id": 1
-      },
-      {
-        "name": "User 2",
-        "id": 2
-      },
-      {
-        "name": "User 3",
-        "id": 3
-      }
-    ]
-  }
+  "users": [
+    {
+      "name": "User 1",
+      "id": 1
+    },
+    {
+      "name": "User 2",
+      "id": 2
+    },
+    {
+      "name": "User 3",
+      "id": 3
+    }
+  ]
+}
