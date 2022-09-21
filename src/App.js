@@ -7,7 +7,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import TaskDetails from './TaskDetails';
 import UserDetails from './UserDetails';
 
-
 function App() {
   return (
     <Router>

@@ -12,6 +12,8 @@ const CreateTask = () => {
 
     const [isPending, setIsPending] = useState(false);
     const history = useHistory();
+
+    //Fetches user data from database
     const { data : users , dataPending : usersPending, error : usersError} = useFetch('http://localhost:8001/users');
 
     const handleSubmit = (e) => {
@@ -41,6 +43,7 @@ const CreateTask = () => {
                 type="text"
                 required
                 value={title}
+                //Changes recorded values dynamically during input
                 onChange={(e) => setTitle(e.target.value)}
                 />
                 <label>Description: </label>
@@ -54,7 +57,8 @@ const CreateTask = () => {
                  value = {responsible}
                  onChange = {(e) => setResponsible(e.target.value)}
                 >
-                    {// Options below are just samples, will have to connect to users database
+                    {
+                        //Lists users based on current contents of database
                     }
                     { users && 
                         users.map((user) => (
@@ -68,6 +72,9 @@ const CreateTask = () => {
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
                 />
+                {
+                    //Disables button if already submitted and pending
+                }
                 { !isPending && <button>Add task</button> }
                 { isPending && <button disabled>Adding task...</button>}
             </form>

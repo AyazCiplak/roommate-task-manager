@@ -37,22 +37,22 @@ code {
   border-bottom: 1px solid black;
 }
 
-.create-task {
+.create-task, .create-user {
   max-width: 450px;
   margin: 0 auto;
   text-align: center;
 }
 
-.create-task label {
+.create-task label, .create-user label {
   text-align: left;
   display: block;
 }
 
-.create-task h2{
+.create-task h2, .create-user h2{
   margin: 25px 0px;
 }
 
-.create-task input, .create-task textarea, .create-task select {
+.create-task input, .create-task textarea, .create-task select, .create-user input, .create-user textarea {
   width: 100%;
   padding: 5px 10px;
   margin: 8px 0px;

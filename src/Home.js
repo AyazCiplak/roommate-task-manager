@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import UserList from './UserList';
 import TaskList from './TaskList';
 import useFetch from './useFetch';
@@ -6,20 +5,10 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
 
-    //Sample user set
-   // const [users, setUsers] = useState([
-   //     { name: "Name 1", id: 1},
-   //     { name: "Name 2", id: 2},
-   //     { name: "Name 3", id: 3}
-   // ]);
-
     const { data : users , dataPending : usersPending, error : usersError} = useFetch('http://localhost:8001/users')
     const { data : tasks , dataPending : tasksPending, error : tasksError} = useFetch('http://localhost:8000/tasks')
-    //Insert following line over first "tasks-header div"
-    //<UserList users={users}/>
     
-
-    //Note: && does not display the second element if the first one is false
+    //Note: && does not display the second element if the first one is false (cannot attempt to display unloaded data)
     return ( 
         <div className="home">
             { usersError && <div>{ usersError }</div> }
