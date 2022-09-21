@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import { useHistory } from 'react-router-dom';
+import useFetch from './useFetch';
 
 const CreateTask = () => {
     
@@ -11,7 +12,7 @@ const CreateTask = () => {
 
     const [isPending, setIsPending] = useState(false);
     const history = useHistory();
-
+    const { data : users , dataPending : usersPending, error : usersError} = useFetch('http://localhost:8001/users');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -55,9 +56,10 @@ const CreateTask = () => {
                 >
                     {// Options below are just samples, will have to connect to users database
                     }
-                    <option value="Ayaz">Ayaz</option>
-                    <option value="Jordi">Jordi</option>
-                    <option value="Manu">Manu</option>
+                    { users && 
+                        users.map((user) => (
+                        <option value={ user.name }>{ user.name }</option>
+                    ))}
                     <option value="None">N/A</option>
                 </select>
                 <label>Due date: </label>

@@ -22,7 +22,7 @@ const Home = () => {
     //Note: && does not display the second element if the first one is false
     return ( 
         <div className="home">
-            { tasksError && <div>{ tasksError }</div> }
+            { usersError && <div>{ usersError }</div> }
             <div className="users-header">
                 <h2>Users</h2>
                 <button className="new-user-button">
@@ -32,7 +32,7 @@ const Home = () => {
             { usersPending && <div>Loading users...</div> }
             { users && <UserList data={ users }/> }
 
-
+            { tasksError && <div>{ tasksError }</div> }
             <div className="tasks-header">
                 <h2>Tasks</h2>
                 <button className="new-task-button">

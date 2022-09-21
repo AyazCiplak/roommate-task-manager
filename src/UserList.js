@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 
-//Lists users based on an array users
 const UserList = ({ data: users }) => {
 
     //Deletes task, then reloads page to update data (using history.go(0))
