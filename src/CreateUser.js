@@ -47,11 +47,14 @@ const CreateUser = () => {
                   value={description} 
                   onChange={(e) => setDescription(e.target.value)} 
                 ></textarea>
-                { !isPending && <button>Add User</button> }
-                { isPending && <button disabled>Adding user...</button>}
-                <Link to="/">
-                    <button>Back</button>
-                </Link>
+                <div className="create-buttons">
+                    <Link to="/">
+                        <button className="back-button">Back</button>
+                    </Link>
+                    { !isPending && <button>Add User</button> }
+                    { isPending && <button disabled>Adding user...</button>}
+                </div>
+                
             </form>
 
 

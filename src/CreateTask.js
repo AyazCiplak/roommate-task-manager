@@ -75,11 +75,13 @@ const CreateTask = () => {
                 {
                     //Disables button if already submitted and pending
                 }
-                { !isPending && <button>Add task</button> }
-                { isPending && <button disabled>Adding task...</button>}
-                <Link to="/">
-                    <button>Back</button>
-                </Link>
+                <div className="create-buttons">
+                    <Link to="/">
+                        <button className="back-button">Back</button>
+                    </Link>
+                    { !isPending && <button>Add task</button> }
+                    { isPending && <button disabled>Adding task...</button>}
+                </div>
             </form>
 
 

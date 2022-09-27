@@ -1,18 +1,18 @@
 {
   "tasks": [
     {
-      "title": "Task 2",
-      "description": "This is task number two",
-      "responsible": "Jordi",
-      "date": "01/03/2022",
-      "id": 2
+      "title": "Laundry",
+      "description": "Do laundry",
+      "responsible": "None",
+      "date": "",
+      "id": 1
     },
     {
-      "title": "Task 3",
-      "description": "This is task number three",
-      "responsible": "Manu",
-      "date": "01/02/2022",
-      "id": 3
+      "title": "Dishes",
+      "description": "Do the dishes",
+      "responsible": "Jordi",
+      "date": "02/02/2022",
+      "id": 2
     }
   ]
 }

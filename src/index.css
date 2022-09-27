@@ -58,6 +58,8 @@ code {
   border-bottom: 2px solid black;
 }
 
+
+
 .create-task,
 .create-user, 
 .task-details, 
@@ -67,13 +69,17 @@ code {
   text-align: center;
 }
 
+.create-task, .create-user {
+  font-weight: bold;
+}
+
 .create-task label, .create-user label {
   text-align: left;
   display: block;
 }
 
 .create-task h2, .create-user h2{
-  margin: 25px 0px;
+  margin: 15px 0px;
 }
 
 .create-task input,
@@ -88,13 +94,26 @@ code {
   display: block;
 }
 
-.create-task button {
-  background-color: darkgray;
+.create-task button,
+.create-user button {
+  background-color: lightgray;
   padding: 10px;
   border-radius: 8px;
   cursor: pointer;
   border: 1px solid black;
   font-weight: bold;
+}
+
+.back-button {
+float:left;
+}
+
+.create-buttons {
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  column-gap: 80px;
+  margin-top: 10px;
+
 }
 
 .new-user-button,
