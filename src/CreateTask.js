@@ -64,7 +64,7 @@ const CreateTask = () => {
                         users.map((user) => (
                         <option value={ user.name }>{ user.name }</option>
                     ))}
-                    <option value="None">N/A</option>
+                    <option value="All">Everyone</option>
                 </select>
                 <label>Due date: </label>
                 <input
