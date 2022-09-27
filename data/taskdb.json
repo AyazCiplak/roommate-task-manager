@@ -1,13 +1,6 @@
 {
   "tasks": [
     {
-      "title": "Task 1",
-      "description": "This is task number one",
-      "responsible": "Ayaz",
-      "date": "01/01/2022",
-      "id": 1
-    },
-    {
       "title": "Task 2",
       "description": "This is task number two",
       "responsible": "Jordi",

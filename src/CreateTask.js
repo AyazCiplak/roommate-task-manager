@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import useFetch from './useFetch';
 
 const CreateTask = () => {
@@ -77,7 +77,12 @@ const CreateTask = () => {
                 }
                 { !isPending && <button>Add task</button> }
                 { isPending && <button disabled>Adding task...</button>}
+                <Link to="/">
+                    <button>Back</button>
+                </Link>
             </form>
+
+
         </div>
      );
 }

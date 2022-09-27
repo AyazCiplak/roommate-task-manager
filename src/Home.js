@@ -15,7 +15,7 @@ const Home = () => {
             <div className="users-header">
                 <h2>Users</h2>
                 <button className="new-user-button">
-                    <Link to='/new-user'>+</Link>
+                    <Link className="new-user-text"to='/new-user'>New</Link>
                 </button>
             </div>
             { usersPending && <div>Loading users...</div> }
@@ -25,7 +25,7 @@ const Home = () => {
             <div className="tasks-header">
                 <h2>Tasks</h2>
                 <button className="new-task-button">
-                    <Link to='/new-task'>+</Link>
+                    <Link className="new-task-text"to='/new-task'>New</Link>
                 </button>
             </div>
             { tasksPending && <div>Loading tasks...</div> }

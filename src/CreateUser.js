@@ -1,5 +1,6 @@
 import {useState} from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
+
 
 const CreateUser = () => {
     
@@ -48,7 +49,12 @@ const CreateUser = () => {
                 ></textarea>
                 { !isPending && <button>Add User</button> }
                 { isPending && <button disabled>Adding user...</button>}
+                <Link to="/">
+                    <button>Back</button>
+                </Link>
             </form>
+
+
         </div>
      );
 }
