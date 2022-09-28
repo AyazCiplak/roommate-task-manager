@@ -58,6 +58,13 @@ code {
   border-bottom: 2px solid black;
 }
 
+.task-details, 
+.user-details {
+  border: 1px solid black;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: rgb(235, 235, 235);
+}
 
 
 .create-task,
@@ -95,7 +102,9 @@ code {
 }
 
 .create-task button,
-.create-user button {
+.create-user button,
+.user-details button,
+.task-details button {
   background-color: lightgray;
   padding: 10px;
   border-radius: 8px;
@@ -108,11 +117,29 @@ code {
 float:left;
 }
 
-.create-buttons {
+.task-details article, 
+.user-details article {
+  text-align: left;
+}
+
+.task-details h3, 
+.user-details h3 {
+  padding: 10px 0px;
+}
+
+.task-details p, 
+.user-details p {
+  padding: 2px 0px;
+}
+
+
+.create-buttons, 
+.details-buttons {
   display:grid;
   grid-template-columns: repeat(3,1fr);
   column-gap: 80px;
-  margin-top: 10px;
+  margin-top: 15px;
+  margin-bottom: 8px;
 
 }
 

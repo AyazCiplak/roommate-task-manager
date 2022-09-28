@@ -18,22 +18,24 @@ const TaskDetails = () => {
 
     return ( 
         <div className="task-details">
-            <h2>Task: { id }</h2>
+            <h2>Task details</h2>
             { dataPending && <div>Loading...</div> }
             { error && <div>{ error }</div> }
             { task && (
                 <article>
                     <h3>Title: { task.title }</h3>
-                    <h4>Description: { task.description }</h4>
-                    <h4>Responsible: { task.responsible }</h4>
-                    <h4>Due date: { task.date }</h4>
-                    <button onClick={handleClick}>Delete Task</button>
+                    <p><b>Description:</b> { task.description }</p>
+                    <p><b>Responsible:</b> { task.responsible }</p>
+                    <p><b>Due date:</b> { task.date || <span>No Date</span> }</p>
+                    <div className="details-buttons">
+                        <Link to="/">
+                            <button>Back</button>
+                        </Link>
+                        <button onClick={handleClick}>Delete Task</button>
+                    </div>
                 </article>
             )}
 
-            <Link to="/">
-                <button>Back</button>
-            </Link>
 
         </div>
      );

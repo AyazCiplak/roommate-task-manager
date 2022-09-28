@@ -18,20 +18,23 @@ const UserDetails = () => {
 
     return ( 
         <div className="user-details">
-            <h2>User: { id }</h2>
+            <h2>User Details</h2>
             { dataPending && <div>Loading...</div> }
             { error && <div>{ error }</div> }
             { user && (
                 <article>
-                    <h3>Title: { user.name }</h3>
-                    <h4>Description: { user.description }</h4>
-                    <button onClick={handleClick}>Delete User</button>
+                    <h3>Name: { user.name }</h3>
+                    <p><b>Description:</b> { user.description }</p>
+                    <div className = "details-buttons">
+                        <Link to="/">
+                            <button>Back</button>
+                        </Link>
+                        <button onClick={handleClick}>Delete User</button>
+                    </div>
                 </article>
             )}
 
-            <Link to="/">
-                <button>Back</button>
-            </Link>
+
 
         </div>
      );
