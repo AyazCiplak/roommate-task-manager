@@ -11,6 +11,13 @@ Note: All information inputted by the user is stored in databases (JSON files), 
 ![todo-main-page](https://user-images.githubusercontent.com/97311304/192701633-57fb8261-50e5-419a-bc5d-15eeb995c9d7.jpg)
 -> Home page (note that CSS styles have not yet been fully implemented)
 
+![todo-create-task](https://user-images.githubusercontent.com/97311304/192701801-498fa846-1b67-4cc4-a10e-25589d94eba9.jpg)
+-> Task creation form (reached by clicking on the "new" button beside the Tasks header, or by clicking "New Task" on the navbar
+
+![todo-task-details](https://user-images.githubusercontent.com/97311304/192701923-d44bdb9d-efe6-4e87-949e-dd522cc60bf4.jpg)
+-> Task detail page (reached by clicking on the task name)
+
+
 
 # Technologies used
 - React.js, for all of the webpage functionality
