@@ -34,4 +34,5 @@ Note: All information inputted by the user is stored in databases (JSON files), 
 
 # Next steps
 - Finalize and reorganize CSS desgin, especially colours and text fonts
+- Implement component tests with Jest
 - Implement a MERN stack with a custom database for a more solid back-end and to replace JSON databases 
