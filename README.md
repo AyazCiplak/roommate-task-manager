@@ -5,7 +5,12 @@ Program designed to facilitate delegation of tasks among roommates. Users can:
 - View user and task descriptions
 - Complete tasks (which are moved to an archived section), or delete tasks
 
-Note: All information inputted by the user is stored in databases (JSON), so data is saved and remains there during next usage!
+Note: All information inputted by the user is stored in databases (JSON files), so data is saved and remains there during next usage!
+
+# Screenshots 
+![todo-main-page](https://user-images.githubusercontent.com/97311304/192701633-57fb8261-50e5-419a-bc5d-15eeb995c9d7.jpg)
+-> Home page (note that CSS styles have not yet been fully implemented)
+
 
 # Technologies used
 - React.js, for all of the webpage functionality
