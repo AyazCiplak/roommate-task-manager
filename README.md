@@ -1,11 +1,11 @@
-# Roommate Task Manager
-Program designed to facilitate delegation of tasks among roommates. Users can: 
+# Roommate Task Manager (Beta front-end component)
+Program designed to facilitate delegation of tasks among roommates. I made this project with the intent to use it as a skeleton for the front-end portion of a full-stack application. Functionality: 
 - Add, remove and modify a list of users / roommates
 - Create tasks with descriptions, due dates, and individuals responsible for it (based on the custom roommate list)
 - View user and task descriptions
 - Complete tasks (which are moved to an archived section), or delete tasks
 
-Note: All information inputted by the user is stored in databases (JSON files), so data is saved and remains there during next usage!
+Note: All information inputted by the user is stored in JSON files (to imitate databases), so data is saved and remains there during next usage!
 
 # Screenshots 
 ![todo-main-page](https://user-images.githubusercontent.com/97311304/192701633-57fb8261-50e5-419a-bc5d-15eeb995c9d7.jpg)
